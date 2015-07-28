@@ -67,12 +67,14 @@ module.exports = function(grunt) {
       var serviceMethod = service[opsworksConfig.method];
 
       var params = {
-        StackId: taskConfig.StackId,
-        AppId: taskConfig.AppId,
+        StackId: taskConfig.stackId,
+        AppId: taskConfig.appId,
         Command: {
-          Name: 'deploy'
+          Name: taskConfig.command
         }
       };
+
+      grunt.verbose.debug("Params: " + JSON.stringify(params));
 
       if(_.has(taskConfig, 'args')) {
         params.Command.Args = taskConfig.args;
@@ -137,9 +139,7 @@ module.exports = function(grunt) {
       var deferred = Q.defer();
 
       var params = {
-        AppId: taskConfig.appId,
-        DeploymentIds: [ deploymentId ],
-        StackId: taskConfig.stackId
+        DeploymentIds: [ deploymentId ]
       };
 
       serviceMethod.call(service, params, function(err,res) {
