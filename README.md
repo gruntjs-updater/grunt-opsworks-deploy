@@ -178,7 +178,7 @@ module.exports = function(grunt) {
 				command: 'deploy'
 			},
 			run_recipes: {
-				atackId: '<%= cfg.opsworks.stackId %>',
+				stackId: '<%= cfg.opsworks.stackId %>',
 				appId: '<%= cfg.opsworks.appId %>',
 				command: 'execute_recipes',
 				args: {
