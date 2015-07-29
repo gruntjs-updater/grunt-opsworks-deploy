@@ -30,8 +30,8 @@ grunt.initConfig({
 	cfg: {
 		aws: grunt.file.readJSON('aws-config.json'),
 		opsworks: {
-    		stackId: 'b460a65d-d703-4e68-a452-651370a05560',
-    		appId: 'ca46b3e2-a66b-4e58-b51f-40be7c08e96d'
+    		stackId: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+    		appId: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 	  	}
 	},
 	opsworks_deploy: {
